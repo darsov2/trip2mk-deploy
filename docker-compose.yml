@@ -33,7 +33,7 @@ services:
             - "8083:8083"
     frontend:
         image: darsov2/trip2mk-front
-        container: frontend
+        container_name: frontend
         build:
             context: ./frontend
         ports:
