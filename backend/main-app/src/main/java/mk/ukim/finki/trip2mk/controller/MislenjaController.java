@@ -51,9 +51,7 @@ public class MislenjaController {
                 @RequestParam long znamenitostId,
                 @RequestParam long korisnikId) {
 
-        Znamenitosti znamenitost = znamenitostiService.findById(znamenitostId);
-        Korisnici korisnik = korisniciService.findById(korisnikId);
-        mislenjaService.create(ocenka, opis, znamenitost, korisnik);
+        mislenjaService.create(ocenka, opis, znamenitostId, korisnikId);
 
     }
 }

@@ -31,12 +31,12 @@ services:
             context: ./backend/main-app
         ports:
             - "8083:8083"
-    # culturedge-front:
-    #     image: afilipovski/culturedge-front-d4
-    #     container_name: culturedge-front
-    #     build:
-    #         context: ./culturedge-front
-    #     ports:
-    #         - "80:80"
-    #     depends_on:
-    #         - backend
+    frontend:
+        image: darsov2/trip2mk-front
+        container: frontend
+        build:
+            context: ./frontend
+        ports:
+            - "3000:80"
+        depends_on: 
+            - backend

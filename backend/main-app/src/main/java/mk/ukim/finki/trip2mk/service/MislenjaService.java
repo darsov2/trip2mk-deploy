@@ -7,7 +7,7 @@ import mk.ukim.finki.trip2mk.entities.Znamenitosti;
 import java.util.List;
 
 public interface MislenjaService {
-    void create(int ocenka, String opis, Znamenitosti znamenitost, Korisnici korisnik);
+    void create(int ocenka, String opis, long znamenitost, long korisnik);
     void delete(long id);
     void save(long id, int ocenka, String opis, Znamenitosti znamenitost, Korisnici korisnik);
 
