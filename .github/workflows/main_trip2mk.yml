@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://trip2mkimages.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_7994f1778cd5425982cacd9b84f5ec1e }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_1ad21b4f6ee941ac9352aa764db01efc }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_1677d4df686c459ea7c356e754382d41 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_27adb5fdca61445294b21c8e27ddd0b7 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: trip2mkimages.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_7994f1778cd5425982cacd9b84f5ec1e }}/trip2mk:${{ github.sha }}
+        tags: trip2mkimages.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1677d4df686c459ea7c356e754382d41 }}/trip2mk:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'trip2mk'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_8772746dd29a43a6b6b4c6d0e28bc1eb }}
-        images: 'trip2mkimages.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_7994f1778cd5425982cacd9b84f5ec1e }}/trip2mk:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_a7b50bb09b594fbf8029520a53ea490a }}
+        images: 'trip2mkimages.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1677d4df686c459ea7c356e754382d41 }}/trip2mk:${{ github.sha }}'
